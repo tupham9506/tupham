@@ -21,3 +21,155 @@
  * (c) 2018-present egoist <0x142857@gmail.com>
  * Released under the MIT License.
  */
+
+/*! ./../../helpers */
+
+/*! ./components/vue-draggable-group.component */
+
+/*! ./core */
+
+/*! ./dom.helper */
+
+/*! ./dragend.handler */
+
+/*! ./dragenter.handler */
+
+/*! ./dragleave.handler */
+
+/*! ./dragover.handler */
+
+/*! ./dragstart.handler */
+
+/*! ./events.helper */
+
+/*! ./handlers */
+
+/*! ./helpers */
+
+/*! ./keydown.handler */
+
+/*! ./listeners */
+
+/*! ./mousedown.handler */
+
+/*! ./mouseup.handler */
+
+/*! ./options */
+
+/*! ./state */
+
+/*! ./state.helper */
+
+/*! exports provided: VueDraggable */
+
+/*! exports provided: VueDraggableDirective, default */
+
+/*! exports provided: VueDraggableGroup */
+
+/*! exports provided: addSelection, removeSelection, clearSelections, stopDragAndDrop */
+
+/*! exports provided: attachListeners */
+
+/*! exports provided: dispatchCustomEvent, dispatchReorderEvents */
+
+/*! exports provided: dragendHandler */
+
+/*! exports provided: dragenterHandler */
+
+/*! exports provided: dragleaveHandler */
+
+/*! exports provided: dragoverHandler */
+
+/*! exports provided: dragstartHandler */
+
+/*! exports provided: getDroptargets, getDraggables, updateInitialAttributes, setInitialAtributes, removeOldDropzoneAreaElements, getContainer, addDropeffects, clearDropeffects, hasModifier */
+
+/*! exports provided: getDroptargets, getDraggables, updateInitialAttributes, setInitialAtributes, removeOldDropzoneAreaElements, getContainer, addDropeffects, clearDropeffects, hasModifier, addSelection, removeSelection, clearSelections, stopDragAndDrop, dispatchCustomEvent, dispatchReorderEvents */
+
+/*! exports provided: getOptions */
+
+/*! exports provided: getState */
+
+/*! exports provided: keydownHandler */
+
+/*! exports provided: mousedownHandler */
+
+/*! exports provided: mousedownHandler, mouseupHandler, dragoverHandler, dragstartHandler, dragenterHandler, dragleaveHandler, dragendHandler, keydownHandler */
+
+/*! exports provided: mouseupHandler */
+
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+
+/*!***************************!*\
+  !*** ./src/core/index.js ***!
+  \***************************/
+
+/*!***************************!*\
+  !*** ./src/core/state.js ***!
+  \***************************/
+
+/*!*****************************!*\
+  !*** ./src/core/options.js ***!
+  \*****************************/
+
+/*!***********************************!*\
+  !*** ./src/core/helpers/index.js ***!
+  \***********************************/
+
+/*!*************************************!*\
+  !*** ./src/core/listeners/index.js ***!
+  \*************************************/
+
+/*!****************************************!*\
+  !*** ./src/core/helpers/dom.helper.js ***!
+  \****************************************/
+
+/*!******************************************!*\
+  !*** ./src/core/helpers/state.helper.js ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/core/helpers/events.helper.js ***!
+  \*******************************************/
+
+/*!**********************************************!*\
+  !*** ./src/core/listeners/handlers/index.js ***!
+  \**********************************************/
+
+/*!********************************************************!*\
+  !*** ./src/core/listeners/handlers/dragend.handler.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/core/listeners/handlers/keydown.handler.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/core/listeners/handlers/mouseup.handler.js ***!
+  \********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/components/vue-draggable-group.component.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/core/listeners/handlers/dragover.handler.js ***!
+  \*********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/core/listeners/handlers/dragenter.handler.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/core/listeners/handlers/dragleave.handler.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/core/listeners/handlers/dragstart.handler.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/core/listeners/handlers/mousedown.handler.js ***!
+  \**********************************************************/

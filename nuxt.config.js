@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-
+const path = require('path');
 export default {
   mode: 'universal',
   /*
@@ -30,6 +30,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@plugins/components.js',
+    '@plugins/moment.js',
+    '@plugins/vue-draggable.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -61,7 +64,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -83,6 +86,21 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      const alias = config.resolve.alias || {};
+      const rootDir = this.buildContext.options.rootDir;
+      const aliasList = [
+        'assets',
+        'components',
+        'middleware',
+        'pages',
+        'layouts',
+        'utils',
+        'plugins',
+      ];
+      let i;
+      for(i in aliasList) {
+        alias[`@${aliasList[i]}`] = path.join(rootDir, aliasList[i]);
+      }
     }
   }
 }

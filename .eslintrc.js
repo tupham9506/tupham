@@ -13,5 +13,11 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "semi": [2, "always"],
+    "unicorn/prefer-includes": "off", // Use include insted indexOf
+    // "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "vue/html-self-closing": "off",
+    quotes: [0, "single", { "allowTemplateLiterals": true }],
+    "vue/max-attributes-per-line": [1]
   }
 }

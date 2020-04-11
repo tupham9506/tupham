@@ -1,0 +1,8 @@
+// Vue drag resize fixed
+.vdr.active:before {
+  outline: none !important;
+}
+
+.vdr-stick {
+  opacity: 0;
+}

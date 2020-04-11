@@ -1,5 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 const path = require('path');
+require('dotenv').config();
 export default {
   mode: 'universal',
   /*
@@ -25,6 +26,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@assets/app-theme.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -32,7 +34,7 @@ export default {
   plugins: [
     '@plugins/components.js',
     '@plugins/moment.js',
-    '@plugins/vue-draggable.js'
+    { src: '@plugins/vue-drag-resize.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -102,5 +104,9 @@ export default {
         alias[`@${aliasList[i]}`] = path.join(rootDir, aliasList[i]);
       }
     }
-  }
+  },
+  server: {
+    port: process.env.APP_PORT || 80,
+    host: process.env.APP_HOST || "0.0.0.0"
+  },
 }

@@ -1,19 +1,43 @@
-<section class="t-window drag-item">
-  <!-- Header -->
-  <div class="header">
-    <div class="header-title">
-      <span class="icon">
-        <img src="~/assets/images/programs/computer.png" width="17">
-      </span>
-      <span class="header-title-content">
-        My computer
-      </span>
+<vue-drag-resize
+  :w="windowWidth"
+  :h="windowHeight"
+  :x="windowX"
+  :y="windowY"
+  dragHandle=".header"
+  @resizestop="onResizeStop"
+  @dragstop="onDragStop"
+  ref="drag-ref"
+  v-show="!isMin"
+  v-if="isOpen"
+>
+  <section class="t-window">
+    <!-- Header -->
+    <div class="header" @dblclick="setMaxWindowSize">
+      <div class="header-title">
+        <span class="icon">
+          <img src="~/assets/images/programs/computer.png" width="17">
+        </span>
+        <span class="header-title-content">
+          My computer
+        </span>
+      </div>
+      <div class="close-button active" @click="closeWindow">
+        <v-icon small color="#FFFFFF" class="close-button-icon">mdi-close-thick</v-icon>
+      </div>
+      <div class="maximize-button active" @click="setMaxWindowSize">
+        <v-icon small color="#FFFFFF" class="maximize-button-icon" v-if="sizeMode == 'custom'">
+          mdi-window-maximize
+        </v-icon>
+        <v-icon small color="#FFFFFF" class="maximize-button-icon" v-if="sizeMode == 'max'">
+          mdi-window-restore
+        </v-icon>
+      </div>
+      <div class="minimize-button active" @click="minWindow">
+        <v-icon small color="#FFFFFF" class="minimize-button-icon">mdi-window-minimize</v-icon>
+      </div>
     </div>
-    <div class="close-button active">
-      <v-icon small color="#FFFFFF" class="close-button-icon">mdi-close</v-icon>
+    <div class="content">
+      <slot></slot>
     </div>
-  </div>
-  <div class="content">
-    <slot></slot>
-  </div>
-</section>
+  </section>
+</vue-drag-resize>

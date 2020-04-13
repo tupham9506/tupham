@@ -26,14 +26,18 @@ export default {
   ** Global CSS
   */
   css: [
+    '@assets/common.scss',
     '@assets/app-theme.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@plugins/common.js',
     '@plugins/components.js',
     '@plugins/moment.js',
+    '@plugins/lodash.js',
+    '@plugins/portal-vue.js',
     { src: '@plugins/vue-drag-resize.js', mode: 'client' }
   ],
   /*

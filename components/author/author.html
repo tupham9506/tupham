@@ -1,0 +1,16 @@
+<t-window :slot-data="data">
+  <template>
+    <section class="author">
+      <table class="author-table-info">
+        <tbody>
+          <tr v-for="(item, index) in author" :key="`author-${index}`">
+            <td><v-icon small>{{ item.icon }}</v-icon> {{ item.key }}</td>
+            <td>
+              <div v-html="generateText(item)"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </template>
+</t-window>

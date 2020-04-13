@@ -9,26 +9,28 @@
   ref="drag-ref"
   v-show="!isMin"
   v-if="isOpen"
+  class="drag-t-window"
 >
-  <section class="t-window">
+  <section class="t-window" :class="{'padidng-custom-screen': sizeMode === 'custom'}">
     <!-- Header -->
     <div class="header" @dblclick="setMaxWindowSize">
       <div class="header-title">
-        <span class="icon">
-          <img src="~/assets/images/programs/computer.png" width="17">
-        </span>
-        <span class="header-title-content">
-          My computer
-        </span>
+        <div class="icon" :style="{
+          background: `url(${require('~/assets/' + slotData.icon_link)})`,
+          backgroundSize: 'contain'
+        }"></div>
+        <div class="header-title-content">
+          {{ slotData.title }}
+        </div>
       </div>
       <div class="close-button active" @click="closeWindow">
         <v-icon small color="#FFFFFF" class="close-button-icon">mdi-close-thick</v-icon>
       </div>
       <div class="maximize-button active" @click="setMaxWindowSize">
-        <v-icon small color="#FFFFFF" class="maximize-button-icon" v-if="sizeMode == 'custom'">
+        <v-icon small color="#FFFFFF" class="maximize-button-icon" v-if="sizeMode === 'custom'">
           mdi-window-maximize
         </v-icon>
-        <v-icon small color="#FFFFFF" class="maximize-button-icon" v-if="sizeMode == 'max'">
+        <v-icon small color="#FFFFFF" class="maximize-button-icon" v-if="sizeMode === 'max'">
           mdi-window-restore
         </v-icon>
       </div>
@@ -36,6 +38,7 @@
         <v-icon small color="#FFFFFF" class="minimize-button-icon">mdi-window-minimize</v-icon>
       </div>
     </div>
+    <div class="clear"></div>
     <div class="content">
       <slot></slot>
     </div>

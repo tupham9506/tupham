@@ -1,15 +1,17 @@
 
 export default {
-  name: 'icon',
+  name: 'author',
   components: {},
-  props: [],
+  props: ['data'],
   data () {
     return {
 
-    }
+    };
   },
   computed: {
-
+    author () {
+      return this.$store.state.author.data;
+    }
   },
   mounted () {
 
@@ -17,6 +19,4 @@ export default {
   methods: {
 
   }
-}
-
-
+};

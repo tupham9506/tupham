@@ -1,0 +1,26 @@
+<div @dblclick="openProgram">
+  <vue-drag-resize
+    :w="windowWidth"
+    :h="windowHeight"
+    :x="windowX"
+    :y="windowY"
+    @dragstop="onDragStop"
+    ref="shortcut-drag-ref"
+    class="drag-shortcut"
+    @click="openProgram"
+  >
+    <div class="shortcut">
+      <div class="shortcut-icon" :style="{
+        'width': `${windowWidth - 14}px`,
+        'height': `${(windowHeight - 4 - title)}px`,
+        background: `url(${require('~/assets/' + data.icon_link)})`,
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }"></div>
+      <div class="shortcut-title" @click="openProgram">
+        {{ data.title }}
+      </div>
+    </div>
+  </vue-drag-resize>
+</div>

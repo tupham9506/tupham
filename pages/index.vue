@@ -1,18 +1,15 @@
 <template>
   <div id="app-window">
     <client-only>
-      <vue-drag-resize>
-        <div class="text-center t-window">
-          Bắt đầu ở đâu, kết thúc ở đó. <br>
-          Thất bại ở đâu, thất bại tiếp ở đó. <br>
-          <b>In Progress</b><br>
-          <div>
-            <img src="~/assets/images/common/in-progress.gif">
-          </div>
-        </div>
-      </vue-drag-resize>
-      <computer />
+      <!-- Desktop icon app -->
+      <div v-for="(item, index) in shortcutList" :key="`shortcut-${index}`">
+        <shortcut :data="item" @open-program="openProgram" />
+      </div>
+      <!-- Program opening -->
     </client-only>
+    <div v-for="(item, index) in runList" :key="`run-${index}`">
+      <component :is="item.component" :data="item" />
+    </div>
   </div>
 </template>
 
@@ -22,11 +19,23 @@ export default {
   components: {
     Computer
   },
+  computed: {
+    shortcutList () {
+      return this.$store.state.desktop.shortcutList;
+    },
+    runList () {
+      return this.$store.state.tasks.runList;
+    }
+  },
   methods: {
     mounted () {
 
     },
     onDragover (event) {
+    },
+    openProgram (programName) {
+      const programs = this.$store.getters['programs/getByName'](programName);
+      this.$store.commit('tasks/addProcess', programs);
     }
   }
 };

@@ -3,7 +3,9 @@ import { getWindowSize } from '@utils/size';
 export default {
   name: 't-window',
   components: {},
-  props: {},
+  props: {
+    slotData: {}
+  },
   data () {
     return {
       isOpen: true,
@@ -23,10 +25,10 @@ export default {
   },
   computed: {
     windowWidth () {
-      return this.sizeMode === 'custom' ? this.customWindow.width : getWindowSize().width;
+      return this.sizeMode === 'custom' ? this.customWindow.width : getWindowSize({ exceptTaskbar: true }).width;
     },
     windowHeight () {
-      return this.sizeMode === 'custom' ? this.customWindow.height : getWindowSize().height;
+      return this.sizeMode === 'custom' ? this.customWindow.height : getWindowSize({ exceptTaskbar: true }).height;
     }
   },
   mounted () {
@@ -36,6 +38,8 @@ export default {
       this.setCustomWindow({
         x: obj.left,
         y: obj.top,
+        width: obj.width,
+        height: obj.height,
         sizeMode: 'custom'
       });
     },
@@ -85,6 +89,12 @@ export default {
       }
       this.$set(this.customWindow, 'x', obj.x);
       this.$set(this.customWindow, 'y', obj.y);
+      if (obj.width) {
+        this.$set(this.customWindow, 'width', obj.width);
+      }
+      if (obj.height) {
+        this.$set(this.customWindow, 'height', obj.height);
+      }
     },
     closeWindow () {
       this.isOpen = false;

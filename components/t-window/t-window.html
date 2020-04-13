@@ -7,26 +7,28 @@
   @resizestop="onResizeStop"
   @dragstop="onDragStop"
   ref="drag-ref"
-  v-show="!isMin"
-  v-if="isOpen"
+  v-show="!slotData.isMin"
   class="drag-t-window"
+  :style="{zIndex: slotData.zIndex}"
 >
-  <section class="t-window" :class="{'padidng-custom-screen': sizeMode === 'custom'}">
+  <section class="t-window" :class="{
+      'padidng-custom-screen': sizeMode === 'custom',
+      'active': slotData.id === activeId
+    }"
+    @click="clickWindow"
+  >
     <!-- Header -->
     <div class="header" @dblclick="setMaxWindowSize">
       <div class="header-title">
-        <div class="icon" :style="{
-          background: `url(${require('~/assets/' + slotData.icon_link)})`,
-          backgroundSize: 'contain'
-        }"></div>
+        <icon :data="slotData" class="icon" />
         <div class="header-title-content">
           {{ slotData.title }}
         </div>
       </div>
-      <div class="close-button active" @click="closeWindow">
+      <div class="close-button active" @click.stop="closeWindow">
         <v-icon small color="#FFFFFF" class="close-button-icon">mdi-close-thick</v-icon>
       </div>
-      <div class="maximize-button active" @click="setMaxWindowSize">
+      <div class="maximize-button active" @click.stop="setMaxWindowSize">
         <v-icon small color="#FFFFFF" class="maximize-button-icon" v-if="sizeMode === 'custom'">
           mdi-window-maximize
         </v-icon>
@@ -34,7 +36,7 @@
           mdi-window-restore
         </v-icon>
       </div>
-      <div class="minimize-button active" @click="minWindow">
+      <div class="minimize-button active" @click.stop="minWindow">
         <v-icon small color="#FFFFFF" class="minimize-button-icon">mdi-window-minimize</v-icon>
       </div>
     </div>

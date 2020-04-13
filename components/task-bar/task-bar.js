@@ -1,8 +1,10 @@
 import Clock from './clock';
+import TaskProgram from './task-program';
 export default {
   name: 'task-bar',
   components: {
-    Clock
+    Clock,
+    TaskProgram
   },
   props: [],
   data () {
@@ -11,7 +13,9 @@ export default {
     };
   },
   computed: {
-
+    runList () {
+      return this.$store.state.tasks.runList;
+    }
   },
   mounted () {
 

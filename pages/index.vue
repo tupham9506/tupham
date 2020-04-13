@@ -14,10 +14,8 @@
 </template>
 
 <script>
-import Computer from '@components/computer';
 export default {
   components: {
-    Computer
   },
   computed: {
     shortcutList () {

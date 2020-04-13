@@ -4,6 +4,7 @@ export const state = () => ({
     name: 'author',
     title: 'Tác giả',
     x: 0,
-    y: 0
+    y: 0,
+    isMin: false
   }]
 });

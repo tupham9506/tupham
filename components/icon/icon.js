@@ -1,11 +1,10 @@
-
 export default {
-  name: 'computer',
+  name: 'icon',
   components: {},
-  props: [],
+  props: ['data'],
   data () {
     return {
-      isOpen: true
+
     };
   },
   computed: {
@@ -15,6 +14,8 @@ export default {
 
   },
   methods: {
+    openProgram () {
 
+    }
   }
 };

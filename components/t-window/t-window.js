@@ -8,17 +8,15 @@ export default {
   },
   data () {
     return {
-      isOpen: true,
       sizeMode: 'custom',
-      isMin: false,
       customWindow: {
         width: 800,
         height: 500,
-        x: 300,
-        y: 100
+        x: 0,
+        y: 0
       },
-      windowX: 300,
-      windowY: 100,
+      windowX: Math.floor(Math.random() * 500 + 1),
+      windowY: Math.floor(Math.random() * 300 + 1),
       isSetMaxWindowSize: false,
       dragTimeout: null
     };
@@ -29,6 +27,9 @@ export default {
     },
     windowHeight () {
       return this.sizeMode === 'custom' ? this.customWindow.height : getWindowSize({ exceptTaskbar: true }).height;
+    },
+    activeId () {
+      return this.$store.state.tasks.activeId;
     }
   },
   mounted () {
@@ -97,10 +98,16 @@ export default {
       }
     },
     closeWindow () {
-      this.isOpen = false;
+      this.$store.commit('tasks/killProcess', this.slotData.id);
     },
     minWindow () {
-      this.isMin = true;
+      this.$store.commit('tasks/updateProcess', {
+        id: this.slotData.id,
+        data: { isMin: true }
+      });
+    },
+    clickWindow () {
+      this.$store.commit('tasks/activeProcess', this.slotData.id);
     }
   }
 };

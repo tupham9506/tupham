@@ -1,0 +1,5 @@
+<section class="task-program" :class="{'active': (data.id === activeId) && !data.isMin}" @click="activeProgram">
+  <div class="task-program-item align-center d-flex">
+    <icon :data="data" class="icon" /> {{ data.title }}
+  </div>
+</section>

@@ -1,4 +1,8 @@
-<section class="task-bar d-flex align-center justify-end">
+<section class="task-bar d-flex align-stretch">
   <div class="orb"></div>
-  <clock />
+  <!-- Running program -->
+  <div v-for="(item, index) in runList" :key="`task-program-${index}`">
+    <task-program :data="item" class="flex-column align-self-stretch" />
+  </div>
+  <clock class="ml-auto align-self-stretch align-center d-flex"/>
 </section>

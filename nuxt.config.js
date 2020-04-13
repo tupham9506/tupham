@@ -38,6 +38,7 @@ export default {
     '@plugins/moment.js',
     '@plugins/lodash.js',
     '@plugins/portal-vue.js',
+    '@plugins/shit.js',
     { src: '@plugins/vue-drag-resize.js', mode: 'client' }
   ],
   /*

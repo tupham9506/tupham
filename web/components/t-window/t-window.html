@@ -11,11 +11,14 @@
   class="drag-t-window"
   :style="{zIndex: slotData.zIndex}"
 >
-  <section class="t-window" :class="{
+  <section
+    class="t-window" :class="{
       'padidng-custom-screen': sizeMode === 'custom',
       'active': slotData.id === activeId
     }"
     @click="clickWindow"
+    @mousedown="onSelectElement($event)"
+    @touchstart="onSelectElement($event)"
   >
     <!-- Header -->
     <div class="header" @dblclick="setMaxWindowSize">

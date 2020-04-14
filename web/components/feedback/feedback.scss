@@ -1,0 +1,15 @@
+.feedback {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+
+  .feedback-footer {
+    padding: 10px
+  }
+
+  .window-button {
+    margin-left: $window-button-margin;
+    float: right;
+  }
+}

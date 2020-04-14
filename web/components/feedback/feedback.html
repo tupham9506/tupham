@@ -1,0 +1,25 @@
+<t-window :slot-data="data">
+  <template>
+    <section class="feedback">
+      <v-container>
+        <v-row>
+          <v-col cols="2">Tên của bạn</v-col>
+          <v-col>
+            <input type="text" class="window-input">
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="2">Tên của bạn</v-col>
+          <v-col>
+            <textarea placeholder="Nội dung" class="window-input" rows="10"></textarea>
+          </v-col>
+        </v-row>
+      </v-container>
+      <div class="window-foot feedback-footer">
+          <button type="button" class="window-button">Gửi</button>
+          <button type="button" class="window-button">Đóng</button>
+      </div>
+
+    </section>
+  </template>
+</t-window>

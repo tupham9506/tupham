@@ -19,7 +19,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  'get /api/computer': 'ComputerController.index',
+  'get /api/feedback/create': 'FeedbackController.create',
 
 
   /***************************************************************************

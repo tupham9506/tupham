@@ -4,6 +4,11 @@ export const state = () => ({
     name: 'author',
     title: 'Tác giả',
     component: 'author'
+  }, {
+    icon_link: 'images/programs/feedback.png',
+    name: 'feedback',
+    title: 'Phản hồi',
+    component: 'feedback'
   }]
 });
 

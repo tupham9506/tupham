@@ -16,10 +16,10 @@ const common = {
         params: options.data,
         method: options.method || 'get'
       });
-      response.req_success = true;
+      response.reqSuccess = true;
     } catch (e) {
-      response = e.response;
-      response.req_success = false;
+      response = e.response || {};
+      response.reqSuccess = false;
     }
     return response;
   },
@@ -40,6 +40,10 @@ const common = {
         // Do nothing
     }
     return text;
+  },
+  apiUrl (url) {
+    console.log("process.env.API_URL", process.env);
+    return `${process.env.API_URL || ''}/${url}`;
   }
 };
 

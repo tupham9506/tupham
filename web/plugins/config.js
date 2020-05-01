@@ -1,7 +1,11 @@
 import Vue from 'vue';
 
-const config = {};
+const CONFIG = {};
 
 Vue.config.productionTip = false;
 
-export default config;
+CONFIG.ROUTES = {
+  WINDOW: 'api/window'
+};
+
+export default CONFIG;

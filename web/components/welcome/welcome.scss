@@ -1,0 +1,29 @@
+.welcome {
+  width: 100%;
+  height: 100%;
+  background-image: url('~assets/images/mains/default-desktop.jpg');
+  display: flex;
+  justify-content: center;
+  padding: 300px;
+  color: #FFF;
+  .welcome-content {
+
+  }
+  .welcome-loading {
+    width: 35px;
+    height: 35px;
+    background-image: url('~assets/images/common/loading.png');
+    background-size: contain;
+    animation: spin 1s linear infinite;
+    float: left;
+  }
+  .welcome-text {
+    font-size: 25px;
+    float: left;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

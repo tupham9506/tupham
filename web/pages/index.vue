@@ -25,6 +25,9 @@ export default {
       return this.$store.state.tasks.runList;
     }
   },
+  async mounted () {
+
+  },
   methods: {
     mounted () {
 

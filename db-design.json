@@ -1,0 +1,25 @@
+{
+  "users": {
+    "userName": "type: string | maxLength: 64 | required: true",
+    "password": "type: string | maxLength: 256 | required: true",
+    "desktop": {
+      "shortcuts": {
+        "iconLink": "type: string | maxLength: 512 | required: true",
+        "name": "type: string | maxLength: 64 | required: true",
+        "title": "type: string | maxLength: 128 | required: true",
+        "x": "type: number | maxLength: 8 | required: true",
+        "x": "type: number | maxLength: 8 | required: true",
+        "isMin": "type: boolean | required: true | default: false",
+      },
+      "background": "type: string | maxLength: 512 | required: true",
+    }
+  },
+  "programs": {
+    "[program_id]": {
+      "iconLink": "type: string | maxLength: 512 | required: true",
+      "name": "type: string | maxLength: 64 | required: true",
+      "title": "type: string | maxLength: 128 | required: true",
+      "component": "type: string | maxLength: 64 | required: true",
+    }
+  }
+}

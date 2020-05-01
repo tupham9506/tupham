@@ -1,15 +1,32 @@
 <template>
   <v-app dark>
-    <nuxt />
-    <task-bar />
+    <welcome v-if="process == 'load'" />
+    <div v-if="process == 'login'">
+      <nuxt />
+      <task-bar />
+    </div>
   </v-app>
 </template>
 
 <script>
 import TaskBar from '@components/task-bar';
+import Welcome from '@components/welcome';
 export default {
   components: {
-    TaskBar
+    TaskBar,
+    Welcome
+  },
+  data () {
+    return {
+      process: 'load'
+    };
+  },
+  async mounted () {
+    const result = await this.$store.dispatch('load');
+    if (!result) {
+      return false;
+    }
+    this.process = 'login';
   }
 };
 

@@ -19,9 +19,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /api/computer': 'ComputerController.index',
-  'get /api/feedback/create': 'FeedbackController.create',
-
+  'get /api/window': 'WindowController.index',
+  'get /api/system/migrate': 'SystemController.migrate',
 
   /***************************************************************************
   *                                                                          *

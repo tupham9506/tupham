@@ -7,10 +7,9 @@
 
 module.exports = {
   async index (req, res) {
-    let feedbacks = await Feedback.getFeedbackList();
-
+    let programs = await Program.getList();
     res.send({
-      feedbacks
+      programs
     });
   }
 };

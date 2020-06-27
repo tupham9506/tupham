@@ -17,8 +17,6 @@ export default {
     if (programs) {
       this.$store.commit('tasks/addProcess', programs);
     }
-
-    console.log();
   }
 };
 

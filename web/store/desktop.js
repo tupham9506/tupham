@@ -13,5 +13,12 @@ export const state = () => ({
     x: 0,
     y: 130,
     isMin: false
+  }, {
+    icon_link: 'images/programs/convert.png',
+    name: 'convert-to-http-param',
+    title: 'Chuyển JSON sang HTTP params',
+    x: 0,
+    y: 260,
+    isMin: false
   }]
 });

@@ -110,7 +110,7 @@ export default {
       this.$store.commit('tasks/activeProcess', this.slotData.id);
     },
     onSelectElement (event) {
-      const tagName = event.target.tagName;
+      const tagName = (event.target.tagName || '').toUpperCase();
       if (tagName === 'INPUT' || tagName === 'TEXTAREA' || tagName === 'SELECT' || tagName === 'BUTTON') {
         event.stopPropagation();
       }

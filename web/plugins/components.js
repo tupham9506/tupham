@@ -4,6 +4,7 @@ import Shortcut from '@components/shortcut';
 import Author from '@components/author';
 import Icon from '@components/icon';
 import Feedback from '@components/feedback';
+import ConvertToHttpParam from '@components/convert-to-http-param';
 
 Vue.component('t-window', TWindow);
 Vue.component('shortcut', Shortcut);
@@ -12,3 +13,4 @@ Vue.component('icon', Icon);
 // Global program
 Vue.component('author', Author);
 Vue.component('feedback', Feedback);
+Vue.component('convert-to-http-param', ConvertToHttpParam);

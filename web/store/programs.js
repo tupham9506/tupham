@@ -9,6 +9,11 @@ export const state = () => ({
     name: 'feedback',
     title: 'Phản hồi',
     component: 'feedback'
+  }, {
+    icon_link: 'images/programs/convert.png',
+    name: 'convert-to-http-param',
+    title: 'Chuyển JSON sang HTTP params',
+    component: 'convert-to-http-param'
   }]
 });
 

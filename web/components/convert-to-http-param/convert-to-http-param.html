@@ -1,0 +1,23 @@
+<t-window :slot-data="data">
+  <template>
+    <section>
+      <v-container>
+        <v-row>
+          <v-col>
+            <textarea placeholder="Mã JSON" class="window-input" rows="8" v-model="json"></textarea>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="d-flex">
+            <button type="button" class="window-button" @click="convert">Chuyển đổi</button>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <textarea placeholder="HTTP params" class="window-input" rows="8" v-model="httpParams"></textarea>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+  </template>
+</t-window>
